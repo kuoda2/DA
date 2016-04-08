@@ -16,8 +16,8 @@ namespace MaxAndMinOfCoins
 
             for (int i = 1; i <= S; i++)
             {
-                min[i] = S;
-                max[i] = S * -1;
+                min[i] = S +1;
+                max[i] = (S * -1)-1;
             }
             min[0] = max[0] = 0; //when S = V[i],give it a start point
 
@@ -31,7 +31,7 @@ namespace MaxAndMinOfCoins
                             max[i] = max[i - V[j]] + 1;
                     }
 
-            if (min[S] != S && max[S] > 0)
+            if (max[S] > 0)
                 Console.WriteLine(min[S] + " " + max[S]);
             else
                 Console.WriteLine("0 0");
